@@ -3,12 +3,11 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  // interface의 함수 선언
 
-const arr :String[] = "split".split('')
 
-  return (
-<>test</>
-  );
+
+  return <>test</>;
 }
 
 export default App;
