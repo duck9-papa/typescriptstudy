@@ -31,6 +31,35 @@ function Class() {
   console.log(sum.sum());
   // 8
 
+  // 인터페이스의 클래스
+
+  interface Juice {
+    price: number;
+    fruit: string;
+    taste: string;
+    drink(): void;
+  }
+
+  class AppleAde implements Juice {
+    price;
+    fruit;
+    taste;
+    constructor(p: number, f: string, t: string) {
+      this.price = p;
+      this.fruit = f;
+      this.taste = t;
+    }
+    drink() {
+      console.log(`taste is ${this.taste}`);
+
+    }
+  }
+  const appleAde = new AppleAde(1500, 'apple', 'good');
+
+  console.log(appleAde.fruit);
+  // apple
+  appleAde.drink()
+  // taste is good
   return <>class</>;
 }
 
