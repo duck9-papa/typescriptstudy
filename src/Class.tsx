@@ -40,7 +40,7 @@ function Class() {
     drink(): void;
   }
 
-  class AppleAde implements Juice {
+  class Ade implements Juice {
     price;
     fruit;
     taste;
@@ -51,15 +51,54 @@ function Class() {
     }
     drink() {
       console.log(`taste is ${this.taste}`);
-
     }
   }
-  const appleAde = new AppleAde(1500, 'apple', 'good');
+  const appleAde = new Ade(1500, 'apple', 'good');
 
   console.log(appleAde.fruit);
   // apple
-  appleAde.drink()
+  appleAde.drink();
   // taste is good
+
+  // 인터페이스의 확장
+
+  interface LemonAde extends Juice {
+    // 확장하면서 추가된 항목
+    location: string;
+  }
+
+  const lemonAde: LemonAde = {
+    price: 1000,
+    fruit: 'lemon',
+    taste: 'best',
+    // 추가
+    location: 'home',
+    drink() {
+      console.log('lemon good');
+    },
+  };
+
+  interface Apple {
+    fruit: string;
+  }
+
+  interface Pie {
+    price: number;
+  }
+
+  interface ApplePie extends Apple, Pie {
+    taste: string;
+  }
+
+  const applePie: ApplePie = {
+    // Apple의 요소
+    fruit: 'apple',
+    // Pie의 요소
+    price: 1000,
+    // ApplePie의 요소
+    taste: 'good',
+  };
+
   return <>class</>;
 }
 
